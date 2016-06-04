@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="twitchApp">
+   <head>
+      <title>AngularJS Twitch Forecast SPA</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="bootstrap.min.css" rel="stylesheet">
+      <link href="stylesheet.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+   </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-default">
+            <div class="container">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="/">AngularJS Twitch</a>
+               </div>
+         </nav>
+      </header>
+      <div class="row">
+         <div class="col-md-12" id="title">
+            <h1>Twitch Streamers</h1>
+         </div>
+      </div>
+      <div class="container">
+         <div ng-controller="mainController">
+            <div ng-repeat="info in channel | orderBy: '-online'">
+               <div class="row">
+                  <a href="{{ info.url }}" target="_blank">
+                     <h4>
+                        <div class="col-md-1" ng-class="{online : info.online} "><img ng-src="{{ info.logo }}" class="img-circle"></div>
+                        <div class="col-md-2" ng-class="{online : info.online} ">{{ info.name }}</div>
+                        <div class="col-md-6" ng-class="{online : info.online} ">{{  info.status }}</div>      
+                        <div class="col-md-3" ng-class="{online : info.online} ">{{ info.viewers }}</div>
+                     </h4>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/angular.min.js"></script>
+      <script src="js/angular-route.min.js"></script>
+      <script src="js/angular-resource.min.js"></script>
+      <script src="js/app.js"></script>
+   </body>
+</html>
