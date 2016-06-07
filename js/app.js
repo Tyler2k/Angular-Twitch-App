@@ -1,17 +1,7 @@
 //MODULE
 var twitchApp = angular.module("twitchApp", ["ngRoute", "ngResource"]);
 
-//ROUTES
-/*weatherApp.config(function ($routeProvider){
-   
-    $routeProvider
-    
-    .when("/", {
-        templateUrl: "pages/home.htm",
-        controller: "forecastController"
-    })
-    
-});*/
+
 
 
 
